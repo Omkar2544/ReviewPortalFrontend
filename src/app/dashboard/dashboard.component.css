@@ -1,0 +1,41 @@
+
+
+
+  /* ye bootstrap wala css hai tho yaha se changes kar sakte */
+
+  ngb-rating {
+    color: orange;
+    font-size: 30px;
+}
+
+#kuchbhi{
+  background-color: rgba(234,179,8,.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  border-radius: 3px;
+}
+#hov:hover{
+color:white;
+background-color:black;
+}
+#hov{
+  background-color: rgba(234,179,8,.1);
+}
+.shadow{
+  box-shadow: 2px black;
+  background-color: #ffefb0;
+}
+.shadow:hover{
+  transform: scale(1.04);
+  background-color: white;
+  border-radius: 10px;
+}
+.description{
+  text-align: center;
+  text-justify: inter-word;
+  font-style: italic;
+}

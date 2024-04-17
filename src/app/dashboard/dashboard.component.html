@@ -1,0 +1,145 @@
+<!-- <button (click)="getAllItems()">get all items</button> -->
+<!-- <div class="container" *ngFor="let item of allItems" (click)="getReview(item)">
+    <div class="item-name">{{item.itemname}}</div>
+    <div class="item-category">{{item.itemcategory}}</div>
+    <div class="item-description">{{item.itemdescription}}</div>
+    <div class="average-rating">{{item.averageRating}}</div>
+    <button class="button" >Button</button>
+</div> -->
+
+<!-- <div class="card-container">
+  <mat-card class="example-card" *ngFor="let item of allItems" (click)="getReview(item)">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{item.itemname}}</mat-card-title>
+      <mat-card-subtitle>{{item.itemcategory}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="image-show" mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu">
+    <mat-card-content class="content-card">
+      <p>
+        {{item.itemdescription}}
+
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div> -->
+
+
+
+
+
+
+<!-- yaha se boot strap wala implement kiya hai  -->
+
+
+<!-- Header-->
+<!-- <header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">Shop in style</h1>
+          <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+      </div>
+  </div>
+</header> -->
+<!-- Section-->
+
+
+<form class="d-flex" style=" padding: 10px;
+display: flex;
+justify-content:right;
+align-items:right;
+background-color: rgba(234,179,8,.1);
+" >
+  <button class="btn btn-outline-dark" (click)="showItem()"   id="hov">
+      <i class="bi-cart-fill me-1"></i>
+      Add Item
+      <!-- <span class="badge bg-dark text-white ms-1 rounded-pill">0</span> -->
+  </button>
+</form>
+
+<div id="kuchbhi" >
+
+<section class="py-5 " *ngIf="!showItemDetails" >
+  <div class="container px-4 px-lg-5 mt-5"   >
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          
+          
+          <div class="col mb-5 "  *ngFor="let item of allItems" style="min-width: 300px; min-height: 450px">
+              <div class="card h-100 shadow" (click)="getReview(item)" >
+                  <!-- Sale badge-->
+                  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{item.itemcategory}}</div>
+                  <!-- Product image-->
+                  <img class="card-img-top" src="{{item.image}}" alt="..." style="height:230px" />
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Product name-->
+                          
+                          <h5 class="fw-bolder">{{item.itemname}} </h5>
+                          <!-- <h5 class="fw-bolder">{{item.image}} </h5> -->
+
+
+                          <!-- <ngb-rating [max]="5" [(rate)]="item.averageRating" [readonly]="false"></ngb-rating> -->
+                          <ngb-rating [max]="5" [rate]="item.averageRating" [readonly]="true" ></ngb-rating>
+                          <br>
+                          <!-- Product price-->
+                          <!-- <span class="text-muted text-decoration-line-through">$50.00</span> -->
+                          <p class="description">"{{item.itemdescription}}"</p>
+
+
+                      </div>
+                  </div>
+                  <!-- Product actions-->
+                  <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto"  >More..</a></div>
+                  </div> -->
+              </div>
+          </div>
+          
+          
+          
+          
+      </div>
+  </div>
+  <!-- <svg class="waves relative w-full h-1/3 max-h-96 min-h-150px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,185,0,0.1)"></use><use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,185,0,0.05)"></use><use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,185,0,0.03)"></use><use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,185,0,0.01)" style="position:;"></use></g></svg> -->
+          
+</section>
+
+
+
+
+
+
+<section *ngIf="showItemDetails" class="py-5" style="background-color: #ffefb0; border-radius: 9px;">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row justify-content-center">
+      <div class="">
+        
+          <div class="mb-3">
+            <label for="textInput" class="form-label">Item Name</label>
+            <input type="text" class="form-control" id="itemname" placeholder="Enter Item Name" [(ngModel)]="itemname" >
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Item Category</label>
+            <input type="text" class="form-control" id="itemcategory" placeholder="Enter item Category" [(ngModel)]="itemcategory" >
+          </div>
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Description</label>
+            <textarea  class="form-control" id="itemdescription" placeholder="Enter description" [(ngModel)]="itemdescription" ></textarea>
+          </div>
+          <button (click)="addItem()" class="btn btn-dark" type="submit">Add Item</button>
+       
+      </div>
+    </div>
+  </div>
+  <h3 style="color:red;" *ngIf="chkDataEntered">{{dataNotFound}}</h3>
+</section>
+
+
+
+</div>

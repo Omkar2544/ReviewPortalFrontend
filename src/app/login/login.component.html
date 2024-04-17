@@ -1,0 +1,30 @@
+
+<body  background="assets/images/background.jpg" > 
+<div id="centerdiv" >
+  <p  id="mainPageHeading">Review Portal</p>
+<div class="login-container">
+    <div class="login-form">
+  
+      <mat-form-field class="login-full-width">
+        <mat-label>User Name :</mat-label>
+        <input class="mat-input" matInput placeholder="Enter your Username" [(ngModel)]="username">
+      </mat-form-field><br>
+  
+      <mat-form-field class="login-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput class="mat-input" placeholder="Password" [(ngModel)]="password" [type]="hide ? 'password' : 'text'" #passwordInput>
+      </mat-form-field>
+  
+      <div class="login-button">
+        <button mat-raised-button color="Basic" type="button" (click)="login()">Login</button>
+      </div>
+      <div class="login-msg">Don't have any account? <span (click)="signupRoute()" id="signupClick">Sign Up</span></div>
+
+    </div>
+  </div>
+
+  <div class="login-msg" style="color:red" *ngIf="viewWrongPassword">Wrong Password Entered.... </div>
+
+</div>
+
+</body>

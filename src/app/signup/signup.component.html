@@ -1,0 +1,34 @@
+
+<body background="assets/images/background.jpg">
+<div id="centerdiv">
+  <p  id="mainPageHeading">Review Portal</p>
+<div class="signup-container" *ngIf="signupPageVisible">
+    <div class="signup-form" >
+      <mat-form-field class="signup-full-width">
+        <mat-label>User Name :</mat-label>
+        <input matInput placeholder="Enter your UserName" [(ngModel)]="username">
+      </mat-form-field>
+      <mat-form-field class="signup-full-width">
+        <mat-label>Email :</mat-label>
+        <input matInput placeholder="Enter your Email" [(ngModel)]="email">
+      </mat-form-field>
+  
+      <mat-form-field class="login-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" [(ngModel)]="password" #passwordInput>
+        <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button> -->
+      </mat-form-field>
+  
+      <div class="signup-button">
+        <button mat-raised-button color="Basic" (click)="signup()">Sign Up</button>
+      </div>
+    </div>
+    <div class="signup-msg">Already have an account? <span (click)="navigateSignup()" id="loginClick" >Login</span></div>
+  </div>
+
+</div>
+
+</body>

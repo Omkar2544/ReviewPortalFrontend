@@ -1,0 +1,35 @@
+
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    /* padding: 20px; */
+    text-align: center;
+    /* background-color: #404040; */
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .tech-stack {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .tech-stack:hover {
+    transform: scale(1.1);
+    background-color: rgb(167, 162, 83);
+    border-radius: 10px;
+  }
+  
+  .tech-stack img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .tech-stack span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }

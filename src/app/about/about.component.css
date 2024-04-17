@@ -1,0 +1,39 @@
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .about-website {
+    width: 90%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .developer {
+    width: 45%;
+    background-color: #f0f0f0;
+    /* padding: 20px; */
+    border-radius: 10px;
+  }
+  
+  .left {
+    order: -1; /* Push to the left */
+  }
+  
+  .right {
+    order: 1; /* Push to the right */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-us {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .developer {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }

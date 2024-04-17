@@ -1,0 +1,101 @@
+.comment-section {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 78px;
+    background-color: rgba(234,179,8,.1);
+  }
+  
+  .comment-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .comment {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: flex-start;
+  }
+  
+  .profile-pic {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .comment-content {
+    flex: 1;
+  }
+  
+  .username {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .comment-text {
+    margin-bottom: 0;
+  }
+  
+  .reply-section {
+    margin-top: 10px ;
+  }
+  
+  .reply-button {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .reply {
+    margin-top: 5px;
+    margin-left: 20px;
+    border-left: 1px solid #dcdcdc;
+    padding-left: 10px;
+  }
+  
+  .rating {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .rating-stars {
+    padding-left: 10px;
+    color: yellow;
+  }
+
+
+  /* Additional CSS for custom styling */
+.image-container {
+  width: 25%;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.rating-container {
+  margin-top: 10px;
+}
+
+#rateit{
+  padding-left:10px;
+  color: orange;
+}
+
+#ratebyuser{
+  padding-left: 15px;
+  color: orange;
+  font-size: 40px;
+}
+
+#ratingsize{
+  font-size:20px;
+
+}
+
+.card-body{
+  /* display: flex; */
+ text-align: left;
+ margin-left: 70px;
+}

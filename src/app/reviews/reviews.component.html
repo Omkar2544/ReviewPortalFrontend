@@ -1,0 +1,179 @@
+<!-- <div class="review-container" *ngFor="let rs of dataToShow">
+    <div class="username">{{rs.fk_username}}</div>
+    <div class="review">{{rs.review}}</div>
+    <div class="button-container">
+        <button class="button" (click)="getAllReplies(rs.rid,rs.fk_itemid)">Reply</button>
+    </div>
+    <div >
+      <div class="reply-section" *ngFor="let rst of rs.replyEntity">
+        <div class="reply-name">{{rst.username}}</div>
+        <div>{{rst.reply}}</div>
+      </div>
+    </div>
+
+</div>
+
+<div class="card" style="min-width:70vh;">
+  <div class="card-body" *ngFor="let rs of dataToShow" style="">
+    <h5 class="card-title">{{rs.fk_username}}</h5>
+    <p class="card-text">{{rs.review}}</p>
+    <p class="card-text">{{rs.rating}}</p>
+    
+    <h6 class="card-subtitle mb-2 text-muted">Replies</h6>
+              <div class="card" style="width: 18rem;">
+                <div class="card-body" *ngFor="let rst of rs.replyEntity">
+                  <h5 class="card-title">{{rst.username}}</h5>
+                  <p class="card-text">{{rst.reply}}</p>
+                  
+                  
+                  
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div> -->
+
+
+<section *ngIf="showReviewContainer" class="py-5" style="background-color: rgba(234,179,8,.1); border-radius: 5px;">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row justify-content-center">
+      <div class="">
+        
+          <div class="mb-3">
+            <label for="textInput" class="form-label">Review</label>
+            <input type="text" class="form-control" id="itemname" placeholder="Enter Review" [(ngModel)]="review" >
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Rating:  </label>
+            <!-- <input type="text" class="form-control" id="itemcategory" placeholder="Enter Rating" [(ngModel)]="rating" > -->
+            <ngb-rating [max]="5" [(rate)]="rating" [readonly]="false" id="ratebyuser"></ngb-rating>
+          </div>
+          <!-- <div class="mb-3">
+            <label for="emailInput" class="form-label">Rating</label>
+            <input type="text" class="form-control" id="itemcategory" placeholder="Enter Rating" [(ngModel)]="rating" >
+          </div> -->
+          
+          <button  class="btn btn-dark" (click)="addReview()">Add Review</button>
+          <button  class="btn btn-dark" (click)="goToReveiw()" style="margin-left: 10px;">Back</button>
+          <h3 style="color:red;">{{showUserAboutReview}}</h3>
+      </div>
+    </div>
+  </div>
+  <!-- <h3 style="color:red;" *ngIf="chkDataEntered">{{dataNotFound}}</h3> -->
+</section>
+
+
+
+
+
+
+
+
+
+<div *ngIf="!showReviewContainer">
+
+<section class="py-5"  >
+  <div class="container-fluid px-0"  >
+    <div class="row mx-0 justify-content-center"  >
+      
+      <!-- Loop through items -->
+      <div class="col-12 col-md-6 col-lg-4 px-0 mb-5"  >
+        <div class="card h-100 d-flex flex-row align-items-center" style="background-color: #ffefb0; ">
+          <!-- Product image -->
+          <div class="image-container">
+            <img class="card-img-top" src="{{ recivedData.image }}" alt="..." style="height: 200px; width: 200px; margin: 5px;" />
+          </div>
+          <!-- Product details -->
+          <div class="card-body">
+            <!-- Review name -->
+            <h5 class="card-title fw-bold">{{ recivedData.itemname }}</h5>
+            <!-- Review description -->
+            <p class="card-text">{{ recivedData.itemdescription }}</p>
+            <!-- Average rating with stars -->
+            <div class="rating-container">
+              <ngb-rating [max]="5" [rate]="recivedData.averageRating" [readonly]="true" id="ratingsize"></ngb-rating>
+              <p>Average Rating: {{ recivedData.averageRating | number:'1.0-2'}}</p>
+            </div>
+            
+            <!-- Button to add review -->
+            <div class="text-center mt-3">
+              <button class="btn btn-outline-dark" (click)="goToReveiw()">Add Review</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- bard se uthaya wala code hai ye -->
+
+<div class="comment-section" *ngIf="!showReplyContainer">
+  <h2>Reviews</h2>
+  <div class="comment" *ngFor="let rs of dataToShow">
+    <img src="assets/images/profile-picture1.png" alt="Profile Picture" class="profile-pic">
+    <div class="comment-content"  >
+      <p class="username">{{rs.fk_username}}<ngb-rating [max]="5" [rate]="rs.rating" [readonly]="true" id="rateit"></ngb-rating></p>
+      
+
+
+      <p class="comment-text">{{rs.review}}</p>
+      
+        
+      
+      <div class="reply-section"  >
+        <a  class="reply-button" (click)="addReply(rs)">Reply</a>
+        <div class="comment" *ngFor="let rst of rs.replyEntity">
+          <img src="assets/images/profile-picture1.png" alt="Profile Picture" class="profile-pic">
+          <div class="comment-content">
+            <p class="username">{{rst.username}}</p>
+            <p class="comment-text">{{rst.reply}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+<section *ngIf="showReplyContainer" class="py-5" style="background-color: white; border-radius: 5px;">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row justify-content-center">
+      <div class="">
+        
+          <div class="mb-3">
+            <label for="textInput" class="form-label">Reply</label>
+            <input type="text" class="form-control" id="itemname" placeholder="Enter Reply" [(ngModel)]="reply" >
+          </div>
+          
+          <button  class="btn btn-dark" (click)="addReplyToDb()">Add Reply</button>
+          <button  class="btn btn-dark" (click)="goToReply()" style="margin-left: 15px;">Back</button>
+       
+      </div>
+    </div>
+  </div>
+  <!-- <h3 style="color:red;" *ngIf="chkDataEntered">{{dataNotFound}}</h3> -->
+</section>
+
+
+
+
+
+</div>
+
+
+
+
+

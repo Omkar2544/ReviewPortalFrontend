@@ -1,0 +1,62 @@
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust height as needed */
+    
+  }
+  
+  .signup-container {
+    min-width: 400px; /* Adjust width as needed */
+    /* width: 100%; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffe787;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .signup-button {
+    text-align: center;
+  }
+  
+  .signup-msg {
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+  }
+  #loginClick:hover{
+  cursor: pointer;
+  color:blueviolet;
+  }
+
+  #centerdiv{
+    height:100vh;
+    flex-direction: column; 
+    display: flex; 
+ justify-content: center; 
+ align-items: center;
+  }
+
+  #mainPageHeading{
+    font-size:50px;
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 40px;
+  }
+
+  body{
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
